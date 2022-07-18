@@ -1,13 +1,17 @@
-var apiKey = "03dfa929ee4dd9dfb9feba4929296d27";
-var cityName = document.getElementById("cityName");
+const apiKey = "03dfa929ee4dd9dfb9feba4929296d27";
+const submit = document.getElementById("submit");
+const destinationCity = document.getElementById("cityName");
 
-function retrieveWeather(cityName) {
-  var getWeather =
+function retrieveWeather(e) {
+  e.preventDefault();
+  let destination = destinationCity.value; 
+  let getWeather =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    cityName +
+    destination +
     "&appid=" +
     apiKey;
+  console.log(destination);
   console.log(getWeather);
 }
 
-retrieveWeather(cityName);
+submit.addEventListener("click", retrieveWeather)
