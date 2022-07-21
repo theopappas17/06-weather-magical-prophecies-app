@@ -10,8 +10,12 @@ function retrieveWeather(e) {
     destination +
     "&appid=" +
     apiKey;
-  console.log(destination);
-  console.log(getWeather);
+  getWeatherUrl = getWeather.replace(/\s/g, '&').trim();
+  console.log(getWeatherUrl)
+  fetch(getWeatherUrl).then(function(response) {
+    return response.json();
+    })
 }
+
 
 submit.addEventListener("click", retrieveWeather)
