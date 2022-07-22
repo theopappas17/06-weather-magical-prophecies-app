@@ -22,3 +22,10 @@ h1 {
   padding: 10px;
   font-size: 20px;
 }
+
+#temperature {
+  border: blue 2px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
